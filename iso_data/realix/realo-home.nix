@@ -79,7 +79,8 @@
 
   dconf.settings = #{{{
     {
-      "org/gnome/desktop/session" = { idle-delay = "uint32 0"; };
+      # Note: idle-delay is actually set by gsettings  in the fish autostart
+      # "org/gnome/desktop/session" = { idle-delay = 0; };
       "org/gnome/desktop/screensaver" = { lock-enabled = false; };
       "org/gnome/desktop/notifications" = { show-in-lock-screen = false; };
 
@@ -186,6 +187,7 @@
 
           interactiveShellInit = ''
             set fish_greeting # Disable greeting
+            gsettings set org.gnome.desktop.session idle-delay 0
           '';
           plugins =
             [
