@@ -94,7 +94,7 @@
       #}}}
       network = #{{{
         {
-          enable = true;
+          enable = false;
           networks = #{{{
             {
               "10-front-end" = #{{{
