@@ -96,8 +96,8 @@
           #picture-uri-dark = "file:///etc/nixos/realix/Terraform-blue.jpg";
           #picture-uri = "file:///etc/nixos/realix-iso/iso_data/realix/WALLPAPER.jpg";
           #picture-uri-dark = "file:///etc/nixos/realix-iso-iso_data/realix/WALLPAPER.jpg";
-          picture-uri = "file:///etc/nixos/realix-iso/iso_data/realix/Nature.jpg";
-          picture-uri-dark = "file:///etc/nixos/realix-iso-iso_data/realix/Nature.jpg";
+          picture-uri = "file:///etc/nixos/Nature.jpg";
+          picture-uri-dark = "file:///etc/nixos/Nature.jpg";
         };
 
 
