@@ -95,7 +95,7 @@
       network = #{{{
         {
           enable = true;
-          wait-online = false;
+          wait-online.enable = false;
           # We do NOT enable networks here for nopw ... DHCP is in hardware-configuration.
           networks = #{{{
             {
