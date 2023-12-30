@@ -19,5 +19,5 @@ if [[ -e /home/realo/.config/home-manager/home.nix ]]; then
     cp /home/realo/.config/home-manager/home.nix /etc/nixos/realo-home.nix
 fi
 
-nixos-rebuild switch --flake /etc/nixos#gizmo
+nixos-rebuild switch --impure --flake /etc/nixos#gizmo
 
