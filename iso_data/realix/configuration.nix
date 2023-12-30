@@ -94,12 +94,14 @@
       #}}}
       network = #{{{
         {
-          enable = false;
+          enable = true;
+
+          # We do NOT enable networks here for nopw ... DHCP is in hardware-configuration.
           networks = #{{{
             {
               "10-front-end" = #{{{
                 {
-                  enable = true;
+                  enable = false;
                   name = "en*";
                   DHCP = "yes";
                 };
