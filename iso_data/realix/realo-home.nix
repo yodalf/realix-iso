@@ -92,8 +92,10 @@
 
       "org/gnome/desktop/background" =
         {
-          picture-uri = "file:///etc/nixos/realixix/Terraform-blue.jpg";
-          picture-uri-dark = "file:///etc/nixos/realix/Terraform-blue.jpg";
+          #picture-uri = "file:///etc/nixos/realixix/Terraform-blue.jpg";
+          #picture-uri-dark = "file:///etc/nixos/realix/Terraform-blue.jpg";
+          picture-uri = "file:///etc/nixos/realixix/WALLPAPER.jpg";
+          picture-uri-dark = "file:///etc/nixos/realix/WALLPAPER.jpg";
         };
 
 
