@@ -8,10 +8,11 @@ if [[ ! -e /etc/nixos/realix-iso ]]; then
 else
     cd realix-iso
     git pull
+    cd ..
 fi
 
 rm -f flake.lock
-cp -r realix-iso/realix/* .
+cp -r realix-iso/iso_data/realix/* .
 
 # Override with our own home config if we have one
 if [[ -e /home/realo/.config/home-manager/home.nix ]]; then
