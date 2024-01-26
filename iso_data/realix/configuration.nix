@@ -210,7 +210,7 @@
           password = "toto";
           isNormalUser = true;
           description = "realo";
-          extraGroups = [ "networkmanager" "wheel" "docker" ];
+          extraGroups = [ "networkmanager" "wheel" "docker" "dialout" ];
           shell = pkgs.fish;
           packages = with pkgs; [
           ];
