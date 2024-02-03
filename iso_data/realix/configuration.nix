@@ -262,7 +262,7 @@
       #}}}
       gnome.excludePackages = (with pkgs; #{{{
         [
-          python
+          python3
           mbrola
           gnome-photos
           gnome-tour
