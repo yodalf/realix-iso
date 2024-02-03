@@ -225,6 +225,7 @@
       systemPackages = with pkgs; #{{{
         [
           # Extra
+          python3
           opensc
           libp11
           openssl
@@ -262,7 +263,6 @@
       #}}}
       gnome.excludePackages = (with pkgs; #{{{
         [
-          python3
           mbrola
           gnome-photos
           gnome-tour
