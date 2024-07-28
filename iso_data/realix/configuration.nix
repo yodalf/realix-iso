@@ -191,14 +191,14 @@
           displayManager = #{{{
             {
               gdm.enable = true;
-              autoLogin.enable = true;
               autoLogin.user = "realo";
             };
           #}}}
-          layout = "us";
-          xkbVariant = "";
+          xkb.layout = "us";
+          xkb.variant = "";
         };
       #}}}
+      displayManager.autoLogin = true;
       zram-generator.enable = true;
     };
   #}}}
@@ -266,8 +266,8 @@
           jq
           cifs-utils
           docker-compose
-          gnome.gnome-terminal
-          gnome.gnome-tweaks
+          gnome-terminal
+          gnome-tweaks
           vim_configurable
           wget
           git
@@ -285,18 +285,7 @@
           gnome-tour
         ]) ++ (with pkgs.gnome;
         [
-          cheese # webcam tool
-          gnome-music
-          epiphany # web browser
-          geary # email reader
           gnome-characters
-          tali # poker game
-          iagno # go game
-          hitori # sudoku game
-          atomix # puzzle game
-          yelp # Help view
-          gnome-contacts
-          gnome-initial-setup
         ]);
       #}}}
     };
