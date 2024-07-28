@@ -14,6 +14,7 @@
   nixpkgs.config.allowUnfree = true;
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.rtl-sdr.enable = true;
 
   zramSwap.enable = true;
   
@@ -210,7 +211,7 @@
           password = "toto";
           isNormalUser = true;
           description = "realo";
-          extraGroups = [ "networkmanager" "wheel" "docker" "dialout" ];
+          extraGroups = [ "networkmanager" "wheel" "docker" "dialout" "plugdev" ];
           shell = pkgs.fish;
           packages = with pkgs; [
           ];
