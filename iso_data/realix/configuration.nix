@@ -225,6 +225,18 @@
       localBinInPath = true;
       systemPackages = with pkgs; #{{{
         [
+          # ESP32 etc...
+          arduino-ide
+          python312Packages.pyserial 
+          esptool
+          screen
+          mosquitto
+          minicom
+          esphome
+          home-assistant-cli
+
+         
+          # SDR stuff
           rtl_433
           gnuradio
           rtl-sdr
