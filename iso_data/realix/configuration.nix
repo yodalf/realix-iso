@@ -191,14 +191,13 @@
           displayManager = #{{{
             {
               gdm.enable = true;
-              autoLogin.user = "realo";
             };
           #}}}
           xkb.layout = "us";
           xkb.variant = "";
         };
       #}}}
-      displayManager.autoLogin = true;
+      displayManager.autoLogin =  { enable = true; user="realo"; };
       zram-generator.enable = true;
     };
   #}}}
