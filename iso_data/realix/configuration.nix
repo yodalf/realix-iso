@@ -225,6 +225,10 @@
       localBinInPath = true;
       systemPackages = with pkgs; #{{{
         [
+          rtl_433
+          gnuradio
+          rtl-sdr
+
           # Extra
           python3
           opensc
