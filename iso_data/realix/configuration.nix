@@ -238,6 +238,7 @@
          
           # SDR stuff
           rtl_433
+          hackrf
           (gnuradio.override { extraPackages = with gnuradioPackages; [ osmosdr ]; })
            
           rtl-sdr
