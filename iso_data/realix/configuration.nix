@@ -240,7 +240,7 @@
           rtl_433
           #gnuradio
           (gnuradio.override {
-            extraPackages = with gnuradio.Packages; [ osmosdr ];
+            extraPackages = with gnuradio_Packages; [ osmosdr ];
           })
            
           rtl-sdr
