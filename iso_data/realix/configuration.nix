@@ -239,6 +239,7 @@
           # SDR stuff
           rtl_433
           gnuradio
+          gnuradioPackages.osmosdr
           rtl-sdr
 
           # Extra
