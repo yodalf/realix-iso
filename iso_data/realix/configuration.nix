@@ -15,6 +15,7 @@
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.rtl-sdr.enable = true;
+  hardware.hackrf.enable = true;
 
   zramSwap.enable = true;
   
