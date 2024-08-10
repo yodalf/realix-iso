@@ -226,6 +226,7 @@
       systemPackages = with pkgs; #{{{
         [
           # ESP32 etc...
+          vscode
           platformio
           arduino-ide
           python312Packages.pyserial 
