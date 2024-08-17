@@ -65,8 +65,8 @@
       stateVersion = "24.05";
       autoUpgrade = #{{{
         {
-          enable = true;
-          allowReboot = true;
+          enable = false;
+          allowReboot = false;
           dates = "02:00";
           flake = "/etc/nixos#gizmo";
           flags = #{{{
