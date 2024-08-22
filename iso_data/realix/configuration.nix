@@ -229,8 +229,8 @@
       systemPackages = with pkgs; #{{{
         [
           # BLE sniffer
-          nrfutil
-          nrf-command-line-tools
+          #nrfutil
+          #nrf-command-line-tools
           nrf-udev
           python3Packages.pyserial
           python3Packages.psutil
