@@ -12,7 +12,10 @@
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
   nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config.segger-jlink.acceptLicense = true;
+  nixpkgs.config.permittedInsecurePackages = [
+                "segger-jlink-qt4-796s"
+              ];
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.rtl-sdr.enable = true;
   hardware.hackrf.enable = true;
@@ -225,6 +228,13 @@
       localBinInPath = true;
       systemPackages = with pkgs; #{{{
         [
+          # BLE sniffer
+          nrf-util
+          nrf-command-line-tools
+          nrf-udev
+          python3Packages.pyserial
+          python3Packages.psutil
+
           # ESP32 etc...
           vscode
           platformio
