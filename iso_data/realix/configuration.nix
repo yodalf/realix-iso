@@ -234,6 +234,7 @@
           nrf-udev
           python3Packages.pyserial
           python3Packages.psutil
+          wireshark
 
           # ESP32 etc...
           vscode
