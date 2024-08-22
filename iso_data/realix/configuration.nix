@@ -239,7 +239,7 @@
           vscode
           platformio
           arduino-ide
-          python312Packages.pyserial 
+          python3Packages.pyserial 
           esptool
           screen
           mosquitto
