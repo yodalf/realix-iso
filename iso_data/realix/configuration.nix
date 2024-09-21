@@ -228,6 +228,8 @@
       localBinInPath = true;
       systemPackages = with pkgs; #{{{
         [
+          gnome-characters
+          
           # BLE sniffer
           #nrfutil
           #nrf-command-line-tools
@@ -300,7 +302,6 @@
           gnome-tour
         ]) ++ (with pkgs.gnome;
         [
-          gnome-characters
         ]);
       #}}}
     };
