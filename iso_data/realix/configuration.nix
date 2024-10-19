@@ -133,7 +133,7 @@
       settings = #{{{
         {
           #experimental-features = [ "nix-command" "flakes" "repl-flake" "auto-allocate-uids" "configurable-impure-env"  ];
-          experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+          experimental-features = [ "nix-command" "flakes"  ];
           max-jobs = "auto";
           cores = 0;
           auto-optimise-store = true;
