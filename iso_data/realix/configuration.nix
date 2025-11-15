@@ -18,7 +18,7 @@
               ];
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.rtl-sdr.enable = true;
-  hardware.hackrf.enable = true;
+  #hardware.hackrf.enable = true;
 
   zramSwap.enable = true;
   
@@ -28,7 +28,7 @@
   boot = #{{{
     {
       kernel.sysctl."net.ipv4.ip_forward" = true;
-      binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" ];
+      binfmt.emulatedSystems = [ "x86_64-linux" "armv7l-linux" ];
       supportedFilesystems = [ "zfs" ];
       loader = #{{{
         {
@@ -48,20 +48,20 @@
     };
   #}}}
 
-  fileSystems = #{{{
-    {
-      "home" = #{{{
-        {
-          device = "/dev/disk/by-label/WORK";
-          mountPoint = "/home";
-          fsType = "btrfs";
-          autoResize = true;
-          neededForBoot = true;
-          options = [ "compress=zstd" "noatime" ];
-        };
-      #}}}
-    };
-  #}}}
+  #fileSystems = #{{{
+  #  {
+  #    "home" = #{{{
+  #      {
+  #        device = "/dev/disk/by-label/WORK";
+  #        mountPoint = "/home";
+  #        fsType = "btrfs";
+  #        autoResize = true;
+  #        neededForBoot = true;
+  #        options = [ "compress=zstd" "noatime" ];
+  #      };
+  #    #}}}
+  #  };
+  ##}}}
 
   system = #{{{
     {
@@ -191,17 +191,13 @@
       xserver = #{{{
         {
           enable = true;
-          desktopManager.gnome.enable = true;
-          displayManager = #{{{
-            {
-              gdm.enable = true;
-            };
-          #}}}
           xkb.layout = "us";
           xkb.variant = "";
         };
       #}}}
       displayManager.autoLogin =  { enable = true; user="realo"; };
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
       zram-generator.enable = true;
     };
   #}}}
@@ -228,6 +224,13 @@
       localBinInPath = true;
       systemPackages = with pkgs; #{{{
         [
+          sshpass
+
+          uv
+
+          go
+          nodejs
+
           gnome-characters
           
           # BLE sniffer
@@ -241,7 +244,7 @@
           # ESP32 etc...
           vscode
           platformio
-          arduino-ide
+          #arduino-ide
           python3Packages.pyserial 
           esptool
           screen
@@ -252,11 +255,11 @@
 
          
           # SDR stuff
-          rtl_433
-          hackrf
-          (gnuradio.override { extraPackages = with gnuradioPackages; [ osmosdr ]; })
+          #rtl_433
+          #hackrf
+          #(gnuradio.override { extraPackages = with gnuradioPackages; [ osmosdr ]; })
            
-          rtl-sdr
+          #rtl-sdr
 
           # Extra
           python3
@@ -322,6 +325,10 @@
       users.realo = ./realo-home.nix;
     };
   #}}}
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "claude-code"
+           ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
