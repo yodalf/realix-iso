@@ -110,7 +110,7 @@
           font = "Liberation Mono";
           default-size-columns = 130;
           default-size-rows = 32;
-          visible-name = "REALO";
+          visible-name = "ABB";
         };
 
       "org/gnome/shell" =
