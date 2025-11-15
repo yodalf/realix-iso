@@ -107,10 +107,10 @@
           background-color = "rgb(10,10,10)";
           foreground-color = "rgb(228,178,30)";
           use-system-font = false;
-          font = "Source Code Pro 10";
+          font = "Liberation Mono";
           default-size-columns = 130;
           default-size-rows = 32;
-          visible-name = "ABB";
+          visible-name = "REALO";
         };
 
       "org/gnome/shell" =
