@@ -288,7 +288,7 @@
           docker-compose
           gnome-terminal
           gnome-tweaks
-          vim_configurable
+          vim-full
           wget
           git
           btop
