@@ -223,6 +223,10 @@
   environment = #{{{
     {
       localBinInPath = true;
+      # VMware Fusion draws the guest's hardware cursor itself, at host scale,
+      # so it does not follow the scaling applied to the framebuffer and looks
+      # huge. Let mutter composite the pointer into the framebuffer instead.
+      sessionVariables.MUTTER_DEBUG_DISABLE_HW_CURSORS = "1";
       systemPackages = with pkgs; #{{{
         [
           sshpass
