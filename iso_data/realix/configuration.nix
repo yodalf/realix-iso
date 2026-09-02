@@ -166,6 +166,8 @@
       firewall = #{{{
         {
           enable = true;
+          # Anything on the tailnet may reach this VM's services.
+          trustedInterfaces = [ "tailscale0" ];
         };
       #}}}
     };
@@ -187,6 +189,17 @@
       openssh = #{{{
         {
           enable = true;
+        };
+      #}}}
+      # Tailscale client for the headscale server at https://hs.realo.ca
+      # (see the MINIMAL-NIXOS repo). Register once after the first rebuild:
+      #   sudo tailscale login --login-server https://hs.realo.ca
+      # then on the server: headscale nodes register --user realo --key mkey:...
+      # The login server is remembered in /var/lib/tailscale afterwards.
+      tailscale = #{{{
+        {
+          enable = true;
+          openFirewall = true;   # UDP 41641, for direct peer connections
         };
       #}}}
       xserver = #{{{
