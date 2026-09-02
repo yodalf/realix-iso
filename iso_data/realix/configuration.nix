@@ -30,6 +30,7 @@
       kernel.sysctl."net.ipv4.ip_forward" = true;
       binfmt.emulatedSystems = [ "x86_64-linux" "armv7l-linux" ];
       supportedFilesystems = [ "zfs" ];
+      zfs.forceImportRoot = false;
       loader = #{{{
         {
           systemd-boot = #{{{
@@ -301,10 +302,7 @@
       gnome.excludePackages = (with pkgs; #{{{
         [
           mbrola
-          gnome-photos
           gnome-tour
-        ]) ++ (with pkgs.gnome;
-        [
         ]);
       #}}}
     };
